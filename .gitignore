@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Database files (too large for git - regenerate with scripts/)
+*.db
+*.db-shm
+*.db-wal
+
+# Tauri build artifacts
+src-tauri/target/
+src-tauri/gen/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Environment
+.env
+.env.local
