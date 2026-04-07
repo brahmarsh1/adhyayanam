@@ -3,11 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "tauri": "tauri"
+    "dev:web": "npm run dev -w @adhyayanam/web",
+    "dev:desktop": "npm run tauri:dev -w @adhyayanam/desktop",
+    "dev:mobile": "npm run dev -w @adhyayanam/mobile",
+
+    "build:web": "npm run build -w @adhyayanam/web",
+    "build:desktop": "npm run tauri:build -w @adhyayanam/desktop",
+    "build:mobile": "npm run build -w @adhyayanam/mobile",
+    "build:all": "npm run build:web && npm run build:desktop && npm run build:mobile",
+
+    "dev": "npm run dev:desktop",
+    "build": "npm run build:all"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
